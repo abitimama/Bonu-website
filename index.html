@@ -4,125 +4,420 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BONU | Humanitarian & Community Development</title>
 <meta name="description" content="BONU Humanitarian and Community Development Organization, Bule Hora, Ethiopia.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>BONU | Humanitarian & Community Development</title>
+
+<style>
+:root {
+  --green:#126b45;
+  --dark:#103b2c;
+  --gold:#e8b34c;
+  --light:#f3f8f4;
+  --text:#26352e;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  line-height:1.7;
+  font-size:17px;
+}
+a {text-decoration:none;color:inherit}
+header {
+  position:sticky;top:0;z-index:100;
+  background:white;
+  box-shadow:0 2px 12px #0002;
+}
+nav {
+  max-width:1200px;margin:auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;
+}
+.brand {display:flex;align-items:center;gap:12px}
+.logo {
+  width:52px;height:52px;border-radius:50%;
+  background:var(--green);color:white;
+  border:3px solid var(--gold);
+  display:grid;place-items:center;
+  font-size:25px;font-weight:bold;
+}
+.brand h2 {color:var(--green);font-size:25px}
+.brand small {font-size:11px;color:#666}
+.nav-links {display:flex;gap:17px;align-items:center;flex-wrap:wrap}
+.nav-links a {font-size:14px;font-weight:bold}
+.nav-links a:hover {color:var(--green)}
+.menu-btn {
+  display:none;background:var(--green);color:white;
+  border:0;border-radius:5px;padding:9px 13px;font-size:20px;
+}
+.hero {
+  min-height:590px;
+  display:flex;align-items:center;
+  color:white;padding:70px 22px;
+  background:
+   linear-gradient(90deg,#082e23e8,#082e2380),
+   url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
+.hero-inner {max-width:1150px;margin:auto;width:100%}
+.hero-label {color:#ffda85;font-weight:bold;letter-spacing:2px}
+.hero h1 {
+  font-size:clamp(38px,6vw,65px);
+  line-height:1.15;max-width:850px;margin:18px 0;
+}
+.hero p {font-size:20px;max-width:700px}
+.btn {
+  display:inline-block;padding:13px 23px;
+  margin:22px 10px 0 0;border-radius:6px;
+  background:var(--gold);color:#183526;font-weight:bold;
+}
+.btn-outline {background:transparent;color:white;border:2px solid white}
+.container {max-width:1150px;margin:auto;padding:75px 22px}
+.soft {background:var(--light)}
+.section-title {text-align:center;margin-bottom:38px}
+.section-title span {color:var(--green);font-weight:bold}
+.section-title h2 {font-size:35px;color:var(--dark);margin:7px 0}
+.section-title p {max-width:750px;margin:auto;color:#64716a}
+.about-grid {
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:35px;align-items:center;
+}
+.about-text h3 {font-size:26px;color:var(--green);margin-bottom:12px}
+.about-text p {margin:12px 0}
+.about-panel {
+  background:var(--light);padding:28px;
+  border-left:5px solid var(--gold);border-radius:8px;
+}
+.values {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+.value {background:white;padding:13px;border-radius:6px;font-weight:bold}
+.cards {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.card {
+  background:white;border-radius:10px;overflow:hidden;
+  box-shadow:0 5px 18px #0001;
+}
+.card img {width:100%;height:225px;object-fit:cover;display:block}
+.card-content {padding:20px}
+.card h3 {color:var(--green);margin-bottom:8px}
+.card p {font-size:16px}
+.mission-grid {
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;
+}
+.mission-box {
+  background:white;padding:28px;border-radius:9px;
+  border-top:5px solid var(--green);
+}
+.mission-box h3 {color:var(--green);margin-bottom:10px}
+.steps {counter-reset:step}
+.step {
+  background:white;margin:13px 0;padding:18px 20px 18px 65px;
+  border-radius:8px;position:relative;
+}
+.step:before {
+  counter-increment:step;content:counter(step);
+  position:absolute;left:18px;top:17px;
+  background:var(--green);color:white;
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;font-weight:bold;
+}
+.banner {
+  background:var(--dark);color:white;text-align:center;padding:65px 22px;
+}
+.banner h2 {font-size:34px;margin-bottom:12px}
+.banner p {max-width:760px;margin:auto}
+.funding-links {
+  display:grid;grid-template-columns:1fr 1fr;gap:15px;
+}
+.funding-links a {
+  background:white;border:1px solid #dfe9e2;
+  border-radius:8px;padding:18px;color:var(--green);font-weight:bold;
+}
+.funding-links a:hover {background:var(--light)}
+.note {font-size:14px;color:#66736b;margin-top:18px}
+.contact-grid {
+  display:grid;grid-template-columns:1fr 1fr;gap:30px;
+}
+.contact-info {background:var(--light);padding:27px;border-radius:9px}
+.contact-info p {margin:12px 0}
+.contact-info strong {color:var(--green)}
+.contact-form {display:grid;gap:12px}
+.contact-form input,.contact-form textarea {
+  width:100%;padding:14px;border:1px solid #cdd8d0;
+  border-radius:6px;font:inherit;
+}
+.contact-form textarea {min-height:130px}
+.contact-form button {
+  background:var(--green);color:white;padding:14px;
+  border:0;border-radius:6px;font-size:17px;font-weight:bold;
+}
+footer {
+  background:#102d22;color:white;text-align:center;padding:35px 20px;
+}
+footer p {margin:7px;color:#dce8df}
+footer a {color:#ffda85}
+@media(max-width:850px) {
+  .menu-btn {display:block}
+  .nav-links {
+    display:none;position:absolute;top:76px;left:0;width:100%;
+    background:white;padding:20px;flex-direction:column;align-items:flex-start;
+  }
+  .nav-links.show {display:flex}
+  .about-grid,.contact-grid,.mission-grid {grid-template-columns:1fr}
+  .cards {grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px) {
+  body {font-size:16px}
+  .cards,.values,.funding-links {grid-template-columns:1fr}
+  .hero {min-height:520px}
+  .section-title h2 {font-size:29px}
+  .container {padding:55px 18px}
+}
+</style>
 </head>
+
 <body>
 
-<header class="header">
-  <a class="logo" href="#home">BONU <small>HUMANITARIAN & COMMUNITY DEVELOPMENT</small></a>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#work">Our Work</a>
-    <a href="#partners">Partnership</a>
-    <a href="#funding">Funding</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <select id="language">
-    <option value="en">English</option>
-    <option value="om">Afaan Oromoo</option>
-    <option value="am">አማርኛ</option>
-  </select>
+<header>
+<nav>
+  <a class="brand" href="#home">
+    <div class="logo">B</div>
+    <div>
+      <h2>BONU</h2>
+      <small>Humanitarian & Community Development</small>
+    </div>
+  </a>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About Us</a>
+    <a href="#work" onclick="closeMenu()">Our Work</a>
+    <a href="#approach" onclick="closeMenu()">Our Approach</a>
+    <a href="#partners" onclick="closeMenu()">Partnership</a>
+    <a href="#funding" onclick="closeMenu()">Funding</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+</nav>
 </header>
 
+<main>
 <section class="hero" id="home">
-  <div class="hero-content">
-    <p class="eyebrow">HUMANITY • DIGNITY • OPPORTUNITY</p>
-    <h1>Together, We Build <span>Stronger Communities.</span></h1>
-    <p>Supporting people, empowering youth and creating opportunities for sustainable community development.</p>
-    <a class="button" href="#about">Discover BONU →</a>
+  <div class="hero-inner">
+    <div class="hero-label">HUMANITY • OPPORTUNITY • DEVELOPMENT</div>
+    <h1>Together, We Build Stronger Communities</h1>
+    <p>Working towards a future where vulnerable communities have opportunities, dignity and the support they need to thrive.</p>
+    <a class="btn" href="#about">Discover BONU</a>
+    <a class="btn btn-outline" href="#contact">Contact Us</a>
   </div>
 </section>
 
-<section class="section about" id="about">
-  <p class="tag">01 / ABOUT US</p>
-  <h2>A future where every community can thrive.</h2>
-  <p>BONU Humanitarian and Community Development Organization is a community-focused organization based in Bule Hora, Oromia, Ethiopia.</p>
-  <p>We seek to support vulnerable communities, encourage youth development and strengthen local capacity through inclusive and locally informed initiatives.</p>
-  <div class="values">
-    <div><b>01</b><h3>Dignity</h3><p>Respecting every person.</p></div>
-    <div><b>02</b><h3>Inclusion</h3><p>Creating opportunities for all.</p></div>
-    <div><b>03</b><h3>Transparency</h3><p>Promoting accountability.</p></div>
-    <div><b>04</b><h3>Participation</h3><p>Listening to communities.</p></div>
+<section class="container" id="about">
+  <div class="section-title">
+    <span>WHO WE ARE</span>
+    <h2>About BONU</h2>
+    <p>A community-focused organization committed to humanitarian support and sustainable development.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h3>Our Organization</h3>
+      <p>BONU Humanitarian and Community Development Organization is based in Bule Hora, Oromia, Ethiopia.</p>
+      <p>Our purpose is to support communities, promote human dignity and contribute to inclusive and sustainable development.</p>
+      <p>We seek to work with communities, public institutions, civil society organizations and development partners to identify local needs and develop practical responses.</p>
+    </div>
+    <div class="about-panel">
+      <h3>Our Core Values</h3>
+      <div class="values">
+        <div class="value">🤝 Partnership</div>
+        <div class="value">⚖️ Accountability</div>
+        <div class="value">❤️ Humanity</div>
+        <div class="value">🌱 Sustainability</div>
+        <div class="value">🌍 Inclusion</div>
+        <div class="value">🔎 Transparency</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="mission">
-  <div>
-    <p class="tag">OUR PURPOSE</p>
-    <h2>Local Voices. Shared Action. Lasting Progress.</h2>
-    <p>We aim to contribute to resilient and inclusive communities through humanitarian support and community development opportunities.</p>
+<section class="soft">
+<div class="container">
+  <div class="section-title">
+    <span>OUR PURPOSE</span>
+    <h2>Mission and Vision</h2>
   </div>
+  <div class="mission-grid">
+    <div class="mission-box">
+      <h3>Our Mission</h3>
+      <p>To contribute to improved community wellbeing through humanitarian assistance, capacity development, inclusive participation and sustainable initiatives.</p>
+    </div>
+    <div class="mission-box">
+      <h3>Our Vision</h3>
+      <p>Communities where every person can live with dignity, access opportunities and participate in building a better future.</p>
+    </div>
+  </div>
+</div>
 </section>
 
-<section class="section" id="work">
-  <p class="tag">02 / WHAT WE DO</p>
-  <h2>Our Areas of Work</h2>
-  <p>Our focus is on important humanitarian and community development priorities.</p>
+<section class="container" id="work">
+  <div class="section-title">
+    <span>OUR PRIORITIES</span>
+    <h2>Our Areas of Work</h2>
+    <p>Our program priorities respond to community needs and will be developed with local participation and available resources.</p>
+  </div>
+
   <div class="cards">
-    <article><span>♡</span><h3>Humanitarian Assistance</h3><p>Supporting people affected by hardship through needs-based assistance.</p></article>
-    <article><span>✳</span><h3>Youth Development</h3><p>Encouraging youth skills, leadership and opportunities.</p></article>
-    <article><span>⌂</span><h3>Community Development</h3><p>Strengthening local capacity through community-led initiatives.</p></article>
-    <article><span>▤</span><h3>Education Support</h3><p>Promoting learning opportunities for children and young people.</p></article>
-    <article><span>♧</span><h3>Food Security</h3><p>Supporting community resilience and food security initiatives.</p></article>
-    <article><span>◎</span><h3>Women & Social Inclusion</h3><p>Encouraging equal participation and inclusion.</p></article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80" alt="Illustrative community support">
+      <div class="card-content">
+        <h3>Humanitarian Assistance</h3>
+        <p>Supporting vulnerable households and communities affected by food insecurity and other humanitarian challenges.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80" alt="Illustrative education">
+      <div class="card-content">
+        <h3>Education and Youth</h3>
+        <p>Promoting learning opportunities, youth participation and skills development.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Illustrative youth community">
+      <div class="card-content">
+        <h3>Youth Development</h3>
+        <p>Encouraging youth participation, practical skills and constructive engagement.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Illustrative agriculture and land">
+      <div class="card-content">
+        <h3>Livelihood Development</h3>
+        <p>Encouraging local enterprise, agricultural initiatives and economic resilience.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=900&q=80" alt="Illustrative community">
+      <div class="card-content">
+        <h3>Women and Children</h3>
+        <p>Promoting inclusion, protection, equal opportunities and community support.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Illustrative environment">
+      <div class="card-content">
+        <h3>Environment</h3>
+        <p>Supporting environmental awareness and sustainable community practices.</p>
+      </div>
+    </article>
   </div>
+  <p class="note">Photo note: Images on this page are illustrative stock photographs, not verified photographs of BONU activities.</p>
 </section>
 
-<section class="section approach">
-  <p class="tag">03 / OUR APPROACH</p>
-  <h2>Good Development Starts by Listening.</h2>
+<section class="soft" id="approach">
+<div class="container">
+  <div class="section-title">
+    <span>HOW WE WORK</span>
+    <h2>Our Approach</h2>
+    <p>We aim to build programs with communities and partners through responsible planning and learning.</p>
+  </div>
   <div class="steps">
-    <p><b>01 — Listen:</b> Understand community priorities and needs.</p>
-    <p><b>02 — Plan:</b> Work together with communities and partners.</p>
-    <p><b>03 — Act:</b> Promote transparency, responsibility and learning.</p>
+    <div class="step"><strong>Listen to communities</strong><br>Understand local priorities and needs through consultation.</div>
+    <div class="step"><strong>Plan together</strong><br>Develop realistic activities with clear objectives and responsibilities.</div>
+    <div class="step"><strong>Work with partners</strong><br>Coordinate with relevant institutions and development organizations.</div>
+    <div class="step"><strong>Monitor and learn</strong><br>Review progress, document results and improve our work.</div>
+    <div class="step"><strong>Promote accountability</strong><br>Encourage transparency and responsible use of resources.</div>
   </div>
+</div>
 </section>
 
-<section class="section partnership" id="partners">
-  <p class="tag">04 / PARTNERSHIP</p>
-  <h2>Let’s Create Impact Through Collaboration.</h2>
-  <p>BONU welcomes discussions with civil society organizations, community groups, public institutions, donors and development partners.</p>
-  <a class="button" href="mailto:abitimama86@gmail.com?subject=BONU%20Partnership">Discuss Partnership →</a>
+<section class="banner" id="partners">
+  <h2>Let's Build Partnerships for Change</h2>
+  <p>BONU welcomes dialogue with humanitarian organizations, civil society groups, donors, development agencies, private sector actors and community institutions interested in responsible collaboration.</p>
+  <a href="#contact" class="btn">Start a Conversation</a>
 </section>
 
-<section class="section funding" id="funding">
-  <p class="tag">05 / FUNDING RESOURCES</p>
-  <h2>Funding & Useful Links</h2>
-  <p>Explore these official websites for funding information and opportunities.</p>
-  <div class="funding-list">
-    <a href="https://www.undp.org/ethiopia" target="_blank">UNDP Ethiopia ↗</a>
-    <a href="https://www.globalgiving.org/" target="_blank">GlobalGiving ↗</a>
-    <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/" target="_blank">EU Funding Portal ↗</a>
-    <a href="https://www.undp.org/procurement" target="_blank">UNDP Procurement ↗</a>
-    <a href="https://www.foundation-sanofi.com/" target="_blank">Sanofi Foundation ↗</a>
+<section class="container" id="funding">
+  <div class="section-title">
+    <span>OPPORTUNITIES</span>
+    <h2>Funding and Partnership Resources</h2>
+    <p>Explore external organizations and platforms that publish funding and partnership opportunities.</p>
   </div>
-  <p class="note">These links are for information only. They do not mean that these organizations are BONU donors or partners. Check eligibility and deadlines directly.</p>
+  <div class="funding-links">
+    <a href="https://www.globalgiving.org/" target="_blank" rel="noopener">GlobalGiving ↗</a>
+    <a href="https://www.undp.org/ethiopia" target="_blank" rel="noopener">UNDP Ethiopia ↗</a>
+    <a href="https://www.unpartnerportal.org/" target="_blank" rel="noopener">UN Partner Portal ↗</a>
+    <a href="https://www.eeas.europa.eu/" target="_blank" rel="noopener">European Union ↗</a>
+    <a href="https://www.grants.gov/" target="_blank" rel="noopener">Grants.gov ↗</a>
+    <a href="https://www.un.org/en/about-us/un-system" target="_blank" rel="noopener">United Nations System ↗</a>
+  </div>
+  <p class="note">These are external information resources. Their inclusion does not mean BONU is registered with, funded by, endorsed by or partnered with these organizations. Check each opportunity's eligibility requirements.</p>
 </section>
 
-<section class="contact" id="contact">
-  <div>
-    <p class="tag">06 / CONTACT US</p>
-    <h2>Let’s Work Together for Stronger Communities.</h2>
-    <p>For inquiries, collaboration and partnership discussions, please contact us.</p>
+<section class="soft" id="contact">
+<div class="container">
+  <div class="section-title">
+    <span>GET IN TOUCH</span>
+    <h2>Contact BONU</h2>
+    <p>For partnership discussions, project inquiries and organizational communication, please contact us.</p>
   </div>
-  <div class="contact-info">
-    <p><small>ORGANIZATION</small><b>BONU Humanitarian and Community Development Organization</b></p>
-    <p><small>EXECUTIVE DIRECTOR</small><b>Abiti Mama</b></p>
-    <p><small>PHONE / WHATSAPP</small><b><a href="https://wa.me/251916377098">+251 916 377 098</a></b></p>
-    <p><small>EMAIL</small><b><a href="mailto:abitimama86@gmail.com">abitimama86@gmail.com</a></b></p>
-    <p><small>LOCATION</small><b>Bule Hora, Oromia, Ethiopia</b></p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Organization Information</h3>
+      <p><strong>Organization:</strong><br>BONU Humanitarian and Community Development Organization</p>
+      <p><strong>Executive Director:</strong><br>Abiti Mama</p>
+      <p><strong>Location:</strong><br>Bule Hora, Oromia, Ethiopia</p>
+      <p><strong>Telephone / WhatsApp:</strong><br><a href="https://wa.me/251916377098">+251 916 377 098</a></p>
+      <p><strong>Email:</strong><br><a href="mailto:abitimama86@gmail.com">abitimama86@gmail.com</a></p>
+    </div>
+    <div>
+      <h3>Send an Email</h3>
+      <p>Complete the form to open an email addressed to BONU.</p>
+      <form class="contact-form" onsubmit="sendEmail(event)">
+        <input id="senderName" type="text" placeholder="Your name" required>
+        <input id="senderEmail" type="email" placeholder="Your email address" required>
+        <input id="emailSubject" type="text" placeholder="Subject" required>
+        <textarea id="emailMessage" placeholder="Write your message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </div>
+</div>
 </section>
+</main>
 
 <footer>
-  © <span id="year"></span> BONU Humanitarian & Community Development Organization
+  <h2>BONU</h2>
+  <p>Humanitarian and Community Development Organization</p>
+  <p>Bule Hora, Oromia, Ethiopia</p>
+  <p>Working together for dignity, opportunity and sustainable development.</p>
+  <p>© <span id="year"></span> BONU. All rights reserved.</p>
+  <p><a href="#home">Back to Top ↑</a></p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+function closeMenu() {
+  document.getElementById("navLinks").classList.remove("show");
+}
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function sendEmail(event) {
+  event.preventDefault();
+  const name = document.getElementById("senderName").value;
+  const email = document.getElementById("senderEmail").value;
+  const subject = document.getElementById("emailSubject").value;
+  const message = document.getElementById("emailMessage").value;
+  const body = "Name: " + name + "\nEmail: " + email + "\n\n" + message;
+  window.location.href =
+    "mailto:abitimama86@gmail.com?subject=" +
+    encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+}
+</script>
+
 </body>
 </html>
