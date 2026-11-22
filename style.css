@@ -1,0 +1,125 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #26352d;
+  background: #f7f9f7;
+}
+
+header {
+  background: #14583f;
+  color: white;
+  text-align: center;
+  padding: 22px 12px;
+}
+
+.logo {
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #e9b64f;
+}
+
+.hero {
+  background: linear-gradient(120deg, #123e2d, #31805a);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.btn {
+  display: inline-block;
+  background: #e5ad43;
+  color: #173b2b;
+  padding: 12px 25px;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+section {
+  padding: 55px 8%;
+}
+
+h2 {
+  color: #14583f;
+  font-size: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.card h3 {
+  color: #176b4b;
+}
+
+.funding-links li {
+  margin: 12px 0;
+}
+
+.funding-links a,
+#contact a {
+  color: #176b4b;
+  font-weight: bold;
+}
+
+.notice {
+  font-size: 13px;
+  color: #68756d;
+}
+
+footer {
+  background: #123e2d;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    display: inline-block;
+    margin: 6px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  section {
+    padding: 40px 6%;
+  }
+}
