@@ -1,354 +1,600 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BONU Humanitarian and Community Development Organization works with communities across Oromia and other parts of Ethiopia to advance dignity, protection, peace and sustainable development.">
-<meta name="theme-color" content="#123e2d">
-<title>BONU | Humanitarian & Community Development Organization</title>
+<meta name="description" content="BONU Humanitarian and Community Development Organization works with communities across Ethiopia to advance humanitarian support and sustainable development.">
+<meta name="theme-color" content="#174b35">
+<title>BONU | Humanitarian and Community Development Organization</title>
+
 <style>
-:root{
-  --green:#123e2d;--green2:#1f6849;--green3:#eaf3ed;--gold:#d5ad59;
-  --ink:#1b2d25;--muted:#65756c;--paper:#f7f9f7;--white:#fff;
-  --line:#e2eae4;--shadow:0 16px 45px rgba(13,49,33,.10);
+:root {
+  --green:#174b35;
+  --green2:#26734d;
+  --light:#f3f7f3;
+  --gold:#d8aa4c;
+  --dark:#17251d;
+  --muted:#66736a;
+  --white:#fff;
+  --shadow:0 12px 35px rgba(20,50,30,.10);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.7;background:#fff}
-a{text-decoration:none;color:inherit}
-img{display:block;width:100%;object-fit:cover}
-.container{width:min(1160px,90%);margin:auto}
-.topbar{background:#0b2c20;color:#e9f1eb;font-size:12px;padding:9px 0}
-.topbar .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);box-shadow:0 4px 24px rgba(0,0,0,.06);backdrop-filter:blur(10px)}
-.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;align-items:center;gap:12px}
-.logo-mark{height:48px;width:48px;border-radius:50%;display:grid;place-items:center;background:var(--green);border:3px solid var(--gold);color:#fff;font-weight:800;font-size:22px}
-.logo-text strong{display:block;color:var(--green);font-size:22px;line-height:1.1;letter-spacing:1px}
-.logo-text small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.1px;margin-top:5px}
-nav{display:flex;align-items:center;gap:19px}
-nav a{font-size:12px;font-weight:700;color:#34483d}
-nav a:hover{color:var(--green2)}
-.nav-donate{background:var(--green);color:#fff!important;padding:11px 16px;border-radius:4px}
-.menu-btn{display:none;border:0;background:none;color:var(--green);font-size:29px;cursor:pointer}
-.hero{min-height:610px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(5,31,21,.94),rgba(5,31,21,.63),rgba(5,31,21,.15)),url("https://www.farmafrica.org/wp-content/uploads/2024/07/Forests-for-sustainbale-development-e1720626669659.jpg") center/cover}
-.hero-content{max-width:760px;padding:105px 0}
-.eyebrow{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase}
-.hero h1{font-size:clamp(38px,5.6vw,66px);line-height:1.08;margin:18px 0}
-.hero p{font-size:17px;color:#e5eee8;max-width:690px;margin-bottom:27px}
-.btn{display:inline-block;padding:13px 22px;border-radius:4px;font-size:13px;font-weight:800;margin:5px 8px 5px 0;transition:.2s}
-.btn:hover{transform:translateY(-2px)}
-.btn-gold{background:var(--gold);color:#1b3024}
-.btn-outline{border:1px solid rgba(255,255,255,.8);color:#fff}
-.section{padding:82px 0}
-.light{background:var(--paper)}
-.section-heading{text-align:center;max-width:780px;margin:0 auto 42px}
-.section-heading h2{font-size:clamp(28px,4vw,40px);line-height:1.2;color:var(--green);margin:10px 0}
-.section-heading p{color:var(--muted)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.about-photo{height:430px;border-radius:9px;overflow:hidden;box-shadow:var(--shadow)}
-.about-photo img{height:100%}
-.about-copy h2{font-size:clamp(29px,4vw,38px);line-height:1.2;color:var(--green);margin:12px 0 18px}
-.about-copy p{color:var(--muted);margin-bottom:15px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 7px 24px rgba(0,0,0,.045);transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.card img{height:205px}
-.card-body{padding:22px}
-.card h3{font-size:18px;color:var(--green);margin-bottom:8px}
-.card p{font-size:13px;color:var(--muted)}
-.icon{font-size:25px;margin-bottom:8px}
-.region-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.region-card{background:#fff;border:1px solid var(--line);border-radius:9px;padding:28px;box-shadow:0 6px 22px rgba(0,0,0,.04)}
-.region-card h3{color:var(--green);font-size:21px;margin:8px 0}
-.region-card p{font-size:14px;color:var(--muted)}
-.region-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
-.region-tags span{background:var(--green3);color:var(--green);border:1px solid #d6e6da;border-radius:30px;padding:7px 12px;font-size:12px;font-weight:700}
-.note{font-size:12px;color:var(--muted);margin-top:20px;text-align:center}
-.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.mission-card{padding:28px;background:#fff;border-radius:8px;border-top:4px solid var(--gold);box-shadow:0 5px 20px rgba(0,0,0,.05)}
-.mission-card h3{color:var(--green);font-size:20px;margin-bottom:9px}
-.mission-card p{color:var(--muted);font-size:13px}
-.impact{background:var(--green);color:#fff}
-.impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
-.impact h2{font-size:clamp(29px,4vw,39px);line-height:1.2;margin:12px 0}
-.impact p{color:#dce9e0;margin:12px 0}
-.impact-photo{height:370px;border-radius:9px;overflow:hidden}
-.impact-photo img{height:100%}
-.impact-list{list-style:none;margin-top:18px}
-.impact-list li{padding:8px 0;border-bottom:1px solid #ffffff30;color:#edf4ef}
-.impact-list li:before{content:"✓";color:var(--gold);font-weight:bold;margin-right:10px}
-.partner{background:#edf4ee;text-align:center}
-.partner-box{max-width:850px;margin:auto}
-.partner-box h2{color:var(--green);font-size:clamp(28px,4vw,38px);margin:12px 0}
-.partner-box p{color:var(--muted);margin-bottom:20px}
-.donation-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.donation-card{border:1px solid var(--line);border-radius:8px;padding:28px;background:#fff}
-.donation-card h3{color:var(--green);font-size:21px;margin-bottom:10px}
-.donation-card p{color:var(--muted);font-size:14px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}
-.contact-info h2{font-size:35px;color:var(--green);margin:10px 0}
-.contact-info p{color:var(--muted);margin-bottom:14px}
-.contact-item{padding:13px 0;border-bottom:1px solid var(--line)}
-.contact-item strong{display:block;color:var(--green)}
-.contact-form{background:#fff;padding:28px;border-radius:8px;box-shadow:var(--shadow)}
-.contact-form h3{color:var(--green);margin-bottom:12px}
-.contact-form input,.contact-form textarea{width:100%;padding:13px;border:1px solid #d9e3dc;border-radius:4px;margin:7px 0 12px;font:inherit}
-.contact-form textarea{min-height:120px}
-.contact-form button{border:0;background:var(--green);color:#fff;padding:14px 22px;border-radius:4px;font-weight:bold;cursor:pointer}
-.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.socials a{background:#e8f0e9;color:var(--green);padding:9px 15px;border-radius:4px;font-size:13px;font-weight:bold}
-footer{background:#0b2c20;color:#dce9df;padding:48px 0 20px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;padding-bottom:30px}
-footer h3{color:#fff;margin-bottom:12px}
-footer p,footer a{font-size:13px;color:#c8d8cd}
-footer a{display:block;margin:7px 0}
-footer a:hover{color:var(--gold)}
-.copyright{text-align:center;border-top:1px solid #315441;padding-top:18px;font-size:12px;color:#aebfb3}
-@media(max-width:950px){
- nav{display:none;position:absolute;top:82px;left:0;width:100%;background:#fff;padding:20px 5%;flex-direction:column;align-items:flex-start;box-shadow:0 8px 15px #00000012}
- nav.active{display:flex}.menu-btn{display:block}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--dark);
+  line-height:1.65;
+  background:#fff;
 }
-@media(max-width:760px){
- .section{padding:60px 0}.hero{min-height:540px}.hero-content{padding:75px 0}
- .about-grid,.impact-grid,.contact-grid,.donation-grid,.region-wrap{grid-template-columns:1fr}
- .about-photo{height:300px}.cards,.mission-grid{grid-template-columns:1fr}
- .card img{height:220px}.impact-photo{height:270px}.footer-grid{grid-template-columns:1fr}
+a {text-decoration:none;color:inherit}
+img {width:100%;display:block;object-fit:cover}
+.container {width:min(1160px,92%);margin:auto}
+section {padding:82px 0}
+h1,h2,h3 {line-height:1.2}
+h2 {font-size:clamp(28px,4vw,40px);margin-bottom:18px}
+p {color:var(--muted)}
+.eyebrow {
+  color:var(--green2);font-size:12px;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:12px
+}
+.btn {
+  display:inline-block;padding:13px 23px;border-radius:5px;
+  font-weight:700;background:var(--green);color:#fff;
+  transition:.2s;border:1px solid var(--green)
+}
+.btn:hover {background:var(--green2);transform:translateY(-2px)}
+.btn-outline {background:transparent;color:white;border-color:white}
+.btn-outline:hover {background:white;color:var(--green)}
+header {
+  background:#fff;position:sticky;top:0;z-index:1000;
+  box-shadow:0 2px 15px rgba(0,0,0,.07)
+}
+.nav {
+  min-height:78px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px
+}
+.brand {display:flex;align-items:center;gap:12px}
+.brand-mark {
+  width:48px;height:48px;border-radius:50%;
+  display:grid;place-items:center;background:var(--green);
+  color:white;font-size:21px;font-weight:900;
+  border:3px solid var(--gold)
+}
+.brand-name strong {display:block;color:var(--green);font-size:20px}
+.brand-name small {display:block;font-size:10px;color:var(--muted)}
+nav {display:flex;align-items:center;gap:23px}
+nav a {font-size:13px;font-weight:700;color:#34443a}
+nav a:hover {color:var(--green2)}
+.menu-btn {
+  display:none;background:var(--green);color:white;
+  border:0;border-radius:5px;padding:10px 13px;font-size:20px
+}
+
+/* HERO */
+.hero {
+  min-height:610px;display:flex;align-items:center;
+  color:white;position:relative;
+  background:
+  linear-gradient(90deg,rgba(9,38,25,.88),rgba(9,38,25,.48)),
+  url("https://www.welthungerhilfe.de/fileadmin/_processed_/9/a/csm_2025-wasser-borena-zone-aethiopien_C_Perterhans_992387c685.jpg")
+  center/cover no-repeat;
+}
+.hero-content {max-width:760px;padding:90px 0}
+.hero h1 {font-size:clamp(38px,6vw,65px);margin-bottom:22px}
+.hero h1 span {color:#e9c46b}
+.hero p {color:#f0f4ef;font-size:18px;max-width:650px;margin-bottom:30px}
+.hero-actions {display:flex;gap:14px;flex-wrap:wrap}
+.hero-note {margin-top:35px;color:#e3e9e3;font-size:12px}
+
+/* COMMON */
+.section-head {max-width:720px;margin-bottom:38px}
+.center {text-align:center;margin-left:auto;margin-right:auto}
+.light {background:var(--light)}
+.grid {display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card {
+  background:white;border-radius:10px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.25s
+}
+.card:hover {transform:translateY(-5px)}
+.card img {height:220px}
+.card-body {padding:24px}
+.card h3 {font-size:21px;margin-bottom:12px;color:var(--green)}
+.card p {font-size:14px}
+.tag {
+  display:inline-block;color:var(--green2);font-size:11px;
+  font-weight:800;text-transform:uppercase;letter-spacing:1px;
+  margin-bottom:10px
+}
+
+/* ABOUT */
+.about-grid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:50px;align-items:center
+}
+.about-photo {height:420px;border-radius:12px;overflow:hidden}
+.about-photo img {height:100%}
+.check-list {list-style:none;margin-top:22px}
+.check-list li {margin:12px 0;color:#425047}
+.check-list li:before {content:"✓";color:var(--green2);font-weight:900;margin-right:12px}
+
+/* PROGRAMS */
+.program-icon {
+  width:48px;height:48px;border-radius:50%;
+  background:#e5f0e8;color:var(--green);
+  display:grid;place-items:center;font-size:23px;margin-bottom:18px
+}
+
+/* COMMUNITIES */
+.community-card {position:relative;min-height:350px;color:white}
+.community-card img {height:350px}
+.community-card:after {
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(5,25,15,.9),transparent 75%)
+}
+.community-text {position:absolute;z-index:2;bottom:22px;left:22px;right:22px}
+.community-text h3 {font-size:24px;color:white;margin-bottom:8px}
+.community-text p {color:#edf3ee;font-size:13px}
+
+/* APPROACH */
+.approach {display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.approach-item {
+  padding:25px;background:white;border-radius:9px;
+  border-bottom:3px solid var(--gold)
+}
+.approach-item h3 {color:var(--green);font-size:18px;margin-bottom:9px}
+.approach-item p {font-size:13px}
+
+/* CTA */
+.cta {
+  background:linear-gradient(110deg,#174b35,#26734d);
+  color:white;text-align:center;padding:70px 20px
+}
+.cta h2 {color:white}
+.cta p {color:#e5eee7;max-width:650px;margin:0 auto 25px}
+.cta .btn {background:white;color:var(--green);border-color:white}
+
+/* FOOTER */
+footer {background:#102d20;color:white;padding:55px 0 20px}
+.footer-grid {
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:35px;padding-bottom:35px
+}
+footer h3 {margin-bottom:15px;color:white}
+footer p,footer a {color:#d1ddd4;font-size:13px}
+footer a {display:block;margin:8px 0}
+footer a:hover {color:#e9c46b}
+.footer-bottom {
+  border-top:1px solid #42604e;padding-top:18px;
+  display:flex;justify-content:space-between;gap:15px;
+  flex-wrap:wrap;font-size:12px;color:#c4d2c8
+}
+.note {font-size:11px;color:#77847b;margin-top:25px}
+
+/* MOBILE */
+@media(max-width:850px) {
+  nav {
+    display:none;position:absolute;top:78px;left:0;right:0;
+    background:white;padding:20px 5%;flex-direction:column;
+    align-items:flex-start;box-shadow:var(--shadow)
+  }
+  nav.open {display:flex}
+  .menu-btn {display:block}
+  .grid {grid-template-columns:repeat(2,1fr)}
+  .approach {grid-template-columns:repeat(2,1fr)}
+  .about-grid {gap:25px}
+}
+@media(max-width:600px) {
+  section {padding:58px 0}
+  .grid,.about-grid,.footer-grid {grid-template-columns:1fr}
+  .approach {grid-template-columns:1fr 1fr}
+  .hero {min-height:570px}
+  .hero-content {padding:65px 0}
+  .hero p {font-size:16px}
+  .about-photo {height:280px}
+  .card img {height:210px}
+  .brand-name small {max-width:190px}
 }
 </style>
 </head>
+
 <body>
-<div class="topbar"><div class="container">
-<span>Humanity • Dignity • Peace • Community Development</span>
-<span>Working with communities across Ethiopia</span>
-</div></div>
 
 <header>
-<div class="container nav">
-<a href="#home" class="logo">
-<div class="logo-mark">B</div>
-<div class="logo-text"><strong>BONU</strong><small>HUMANITARIAN & COMMUNITY DEVELOPMENT</small></div>
-</a>
-<button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
-<nav id="navigation">
-<a href="#home" onclick="closeMenu()">Home</a>
-<a href="#about" onclick="closeMenu()">About</a>
-<a href="#programs" onclick="closeMenu()">Our Work</a>
-<a href="#coverage" onclick="closeMenu()">Where We Work</a>
-<a href="#impact" onclick="closeMenu()">Impact</a>
-<a href="#partners" onclick="closeMenu()">Partners</a>
-<a href="#contact" onclick="closeMenu()">Contact</a>
-<a href="#donate" class="nav-donate" onclick="closeMenu()">Support Us</a>
-</nav>
-</div>
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="BONU home">
+      <div class="brand-mark">B</div>
+      <div class="brand-name">
+        <strong>BONU</strong>
+        <small>Humanitarian & Community Development Organization</small>
+      </div>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+
+    <nav id="mainNav">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About Us</a>
+      <a href="#programs" onclick="closeMenu()">Our Work</a>
+      <a href="#communities" onclick="closeMenu()">Communities</a>
+      <a href="#approach" onclick="closeMenu()">Our Approach</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <main>
+
+<!-- HERO -->
 <section class="hero" id="home">
-<div class="container"><div class="hero-content">
-<div class="eyebrow">Building Hope • Empowering Communities</div>
-<h1>Working Together for a Better Future</h1>
-<p>BONU Humanitarian and Community Development Organization works to support vulnerable communities, strengthen local capacity and promote dignity, peace and sustainable development across Ethiopia.</p>
-<a href="#about" class="btn btn-gold">Discover BONU</a>
-<a href="#donate" class="btn btn-outline">Support Our Mission</a>
-</div></div>
+  <div class="container hero-content">
+    <div class="eyebrow" style="color:#e9c46b">Serving communities across Ethiopia</div>
+    <h1>Building Hope.<br><span>Strengthening Communities.</span></h1>
+    <p>
+      BONU works to support vulnerable communities, protect livelihoods
+      and promote inclusive, resilient and sustainable development.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="#about">Discover BONU</a>
+      <a class="btn btn-outline" href="#contact">Partner With Us</a>
+    </div>
+    <div class="hero-note">
+      Community-led action • Human dignity • Sustainable development
+    </div>
+  </div>
 </section>
 
-<section class="section" id="about">
-<div class="container about-grid">
-<div class="about-photo"><img src="https://www.menschenfuermenschen.de/tcl-uploads/2024/07/014_17806_RKW2315-scaled-768x512.jpg" alt="Community members gathered in a rural village"></div>
-<div class="about-copy">
-<div class="eyebrow">Who We Are</div>
-<h2>About BONU Organization</h2>
-<p>BONU Humanitarian and Community Development Organization is a community-focused civil society organization based in Ethiopia.</p>
-<p>BONU seeks to work with communities, public institutions and development partners to support vulnerable people, create opportunities for young people and contribute to inclusive and sustainable development.</p>
-<p>Our approach is guided by cooperation, dignity, participation, accountability and equal opportunity.</p>
-<a href="#programs" class="btn btn-gold">Explore Our Work</a>
-</div>
-</div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-photo">
+      <img
+        src="https://www.afdb.org/sites/default/files/styles/1700x900/public/a1-ethiopie-petits-agriculteurs.jpg?itok=6lwoP2Ft"
+        alt="Smallholder farmers in Ethiopia"
+        loading="lazy">
+    </div>
+    <div>
+      <div class="eyebrow">Who We Are</div>
+      <h2>Working together for a stronger future</h2>
+      <p>
+        BONU Humanitarian and Community Development Organization is an
+        Ethiopian civil society organization committed to humanitarian
+        support and community development.
+      </p>
+      <p style="margin-top:14px">
+        We believe communities should participate in identifying their
+        priorities, shaping solutions and building a better future.
+        Our work focuses on dignity, inclusion, accountability and
+        locally led development.
+      </p>
+      <ul class="check-list">
+        <li>Humanitarian assistance and community support</li>
+        <li>Education and opportunities for young people</li>
+        <li>Women’s empowerment and social inclusion</li>
+        <li>Climate resilience and environmental protection</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section class="section light" id="programs">
-<div class="container">
-<div class="section-heading">
-<div class="eyebrow">Our Areas of Work</div>
-<h2>Responding to Community Priorities</h2>
-<p>Our thematic priorities connect humanitarian assistance with protection, peacebuilding and long-term community development.</p>
-</div>
-<div class="cards">
-<article class="card"><img src="https://ethiopia.iom.int/sites/g/files/tmzbdl996/files/styles/max_1300x1300/public/stories/another_beneficiary_from_west_guji_zone_holding_kid_goats_she_bought_using_her_cash_grant_iom_ethiopia.jpeg?itok=fOl7Fstl" alt="Community food assistance"><div class="card-body"><h3>Humanitarian Assistance</h3><p>Supporting vulnerable households and communities through needs-based humanitarian assistance and emergency response.</p></div></article>
-<article class="card"><img src="https://www.unicef.org/ethiopia/sites/unicef.org.ethiopia/files/styles/hero_desktop/public/L1200382.webp?itok=6RLF66K1" alt="Students learning in a classroom"><div class="card-body"><h3>Education Support</h3><p>Promoting access to education and supporting students facing social and economic barriers.</p></div></article>
-<article class="card"><img src="https://www.unicef.org/ethiopia/sites/unicef.org.ethiopia/files/styles/hero_desktop/public/L1200382.webp?itok=6RLF66K1" alt="People learning practical skills"><div class="card-body"><h3>Youth and Women Empowerment</h3><p>Encouraging skills development, participation, leadership and livelihood opportunities.</p></div></article>
-<article class="card"><img src="https://www.afdb.org/sites/default/files/styles/1700x900/public/a1-ethiopie-petits-agriculteurs.jpg?itok=6lwoP2Ft" alt="Farmers working in a field"><div class="card-body"><h3>Food Security and Livelihoods</h3><p>Promoting resilient livelihoods, food security, agriculture and household wellbeing.</p></div></article>
-<article class="card"><img src="https://www.farmafrica.org/wp-content/uploads/2024/07/Forests-for-sustainbale-development-e1720626669659.jpg" alt="Green landscape and agriculture"><div class="card-body"><h3>Environmental Protection</h3><p>Supporting community-led natural resource protection and climate resilience initiatives.</p></div></article>
-<article class="card"><img src="https://www.ena.et/documents/42148/0/ambo1%2B%2835%29.jpg/20b812e6-d05e-c2ba-7c05-510849e7d5f2?download=true&t=1768456993185&version=1.0" alt="Community members meeting"><div class="card-body"><h3>Community Development</h3><p>Working with communities to identify priorities and strengthen local participation and capacity.</p></div></article>
-<article class="card"><div class="card-body"><div class="icon">🕊️</div><h3>Peacebuilding and Conflict Prevention</h3><p>Promoting dialogue, social cohesion, peaceful coexistence, reconciliation and community-led conflict prevention.</p></div></article>
-<article class="card"><div class="card-body"><div class="icon">🛡️</div><h3>General Protection</h3><p>Promoting safety, dignity, inclusion and access to protection services for vulnerable and at-risk people, in line with humanitarian principles.</p></div></article>
-<article class="card"><div class="card-body"><div class="icon">💧</div><h3>Water, Sanitation and Hygiene (WASH)</h3><p>Supporting access to safe water, sanitation facilities, hygiene awareness and healthier community environments.</p></div></article>
-</div>
-</div>
+<!-- PROGRAMS -->
+<section class="light" id="programs">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Our Areas of Work</div>
+      <h2>Creating lasting community impact</h2>
+      <p>
+        Our program priorities respond to needs identified with
+        communities and local stakeholders.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-body">
+          <div class="program-icon">🤝</div>
+          <h3>Humanitarian Support</h3>
+          <p>
+            Supporting vulnerable households with dignity-focused
+            assistance and community-based responses to hardship.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="program-icon">📚</div>
+          <h3>Education</h3>
+          <p>
+            Promoting access to learning, educational support and
+            opportunities for children and young people.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="program-icon">🌾</div>
+          <h3>Livelihoods & Food Security</h3>
+          <p>
+            Supporting farmers, pastoralists and vulnerable households
+            to strengthen livelihoods and resilience.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="program-icon">🌳</div>
+          <h3>Environment & Climate</h3>
+          <p>
+            Encouraging natural resource protection, land restoration,
+            water conservation and climate resilience.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="program-icon">👩🏽‍🤝‍👩🏾</div>
+          <h3>Women & Youth Empowerment</h3>
+          <p>
+            Promoting participation, skills development, leadership
+            and inclusive economic opportunities.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="program-icon">🏘️</div>
+          <h3>Community Development</h3>
+          <p>
+            Working with communities and local institutions to identify
+            priorities and develop sustainable local solutions.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="coverage">
-<div class="container">
-<div class="section-heading">
-<div class="eyebrow">Our Geographic Reach</div>
-<h2>Working Beyond One Town</h2>
-<p>BONU aims to work with communities across Oromia and other parts of Ethiopia, according to community needs, organizational capacity, partnerships and applicable registration permissions.</p>
-</div>
-<div class="region-wrap">
-<div class="region-card">
-<div class="eyebrow">Oromia Region</div>
-<h3>Across Oromia, including Guji and Borana</h3>
-<p>Our geographic focus is not limited to Bule Hora. BONU seeks to support communities across Oromia, including the Guji and Borana areas and other zones of the region.</p>
-<div class="region-tags"><span>Bule Hora</span><span>Guji</span><span>Borana</span><span>West Guji</span><span>Other parts of Oromia</span></div>
-</div>
-<div class="region-card">
-<div class="eyebrow">Southern Ethiopia</div>
-<h3>Southern communities and neighboring areas</h3>
-<p>BONU also seeks opportunities to work with communities in Gedeo, Burji, Konso and Kore areas, and in other parts of Southern Ethiopia.</p>
-<div class="region-tags"><span>Gedeo</span><span>Burji</span><span>Konso</span><span>Kore communities</span><span>Southern Ethiopia</span></div>
-</div>
-<div class="region-card">
-<div class="eyebrow">Southwestern Ethiopia</div>
-<h3>Potential partnership and program areas</h3>
-<p>Subject to needs assessment, resources and the required permissions, BONU aims to explore community development and humanitarian partnerships in Southwestern Ethiopia.</p>
-<div class="region-tags"><span>Southwestern Ethiopia</span><span>Community partnerships</span><span>Humanitarian response</span></div>
-</div>
-<div class="region-card">
-<div class="eyebrow">National Vision</div>
-<h3>A wider commitment to Ethiopia</h3>
-<p>BONU's long-term vision is to contribute to dignity, resilience and sustainable community development in different parts of Ethiopia through accountable, locally informed programs.</p>
-<div class="region-tags"><span>Community-led action</span><span>Partnerships</span><span>Inclusive development</span></div>
-</div>
-</div>
-<p class="note">Geographic areas listed describe BONU's intended reach and areas of interest; they do not imply that BONU currently has offices or active projects in every location.</p>
-</div>
+<!-- COMMUNITIES -->
+<section id="communities">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Communities & Local Realities</div>
+      <h2>Understanding different community needs</h2>
+      <p>
+        Ethiopia's communities have diverse livelihoods, cultures,
+        environments and development priorities. BONU seeks to listen,
+        learn and work alongside them.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card community-card">
+        <img
+          src="https://www.welthungerhilfe.de/fileadmin/_processed_/9/a/csm_2025-wasser-borena-zone-aethiopien_C_Perterhans_992387c685.jpg"
+          alt="Water and pastoralist livelihood challenges in Borana"
+          loading="lazy">
+        <div class="community-text">
+          <h3>Borana Communities</h3>
+          <p>
+            Pastoralist livelihoods, water scarcity, drought,
+            pasture conditions, livestock health and food security.
+          </p>
+        </div>
+      </article>
+
+      <article class="card community-card">
+        <img
+          src="https://ethiopia.iom.int/sites/g/files/tmzbdl996/files/styles/max_1300x1300/public/stories/another_beneficiary_from_west_guji_zone_holding_kid_goats_she_bought_using_her_cash_grant_iom_ethiopia.jpeg?itok=fOl7Fstl"
+          alt="Livestock and livelihood in West Guji"
+          loading="lazy">
+        <div class="community-text">
+          <h3>Guji Communities</h3>
+          <p>
+            Livestock and farming livelihoods, youth opportunities,
+            water access and sustainable natural resource management.
+          </p>
+        </div>
+      </article>
+
+      <article class="card community-card">
+        <img
+          src="https://www.afdb.org/sites/default/files/styles/1700x900/public/a1-ethiopie-petits-agriculteurs.jpg?itok=6lwoP2Ft"
+          alt="Agricultural livelihoods in Ethiopia"
+          loading="lazy">
+        <div class="community-text">
+          <h3>Gedeo Communities</h3>
+          <p>
+            Smallholder farming, coffee and agroforestry livelihoods,
+            environmental protection and access to opportunities.
+          </p>
+        </div>
+      </article>
+
+      <article class="card community-card">
+        <img
+          src="https://www.afdb.org/sites/default/files/styles/1700x900/public/a1-ethiopie-petits-agriculteurs.jpg?itok=6lwoP2Ft"
+          alt="Rural farming communities in Ethiopia"
+          loading="lazy">
+        <div class="community-text">
+          <h3>Burji Communities</h3>
+          <p>
+            Community-identified priorities, rural livelihoods,
+            food security, education and inclusive development.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">
+      Note: External photographs are illustrative and are not evidence
+      of BONU projects or beneficiaries. Replace them with locally
+      documented photographs only after obtaining informed permission.
+      Photo use must comply with the original publishers' terms.
+    </p>
+  </div>
 </section>
 
-<section class="section light" id="mission">
-<div class="container">
-<div class="section-heading"><div class="eyebrow">Our Direction</div><h2>Mission, Vision and Values</h2><p>Our work is guided by dignity, fairness, accountability and participation.</p></div>
-<div class="mission-grid">
-<div class="mission-card"><h3>Our Mission</h3><p>To support vulnerable people, strengthen communities and promote inclusive development through humanitarian action, protection, peacebuilding, education and empowerment.</p></div>
-<div class="mission-card"><h3>Our Vision</h3><p>Communities across Ethiopia where people live with dignity, equal opportunities, peace, resilience and hope for a better future.</p></div>
-<div class="mission-card"><h3>Our Values</h3><p>Humanity, impartiality, neutrality, accountability, transparency, inclusion, respect and community participation.</p></div>
-</div>
-</div>
+<!-- CHALLENGES -->
+<section class="light">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Community Priorities</div>
+      <h2>Challenges that require shared solutions</h2>
+      <p>
+        These are issues BONU aims to understand through community
+        consultation. Conditions differ by location and household.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-body">
+          <h3>Water Scarcity & Drought</h3>
+          <p>
+            Improving access to water, protecting water sources and
+            strengthening preparedness for climate-related shocks.
+          </p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h3>Food & Livelihood Security</h3>
+          <p>
+            Supporting sustainable farming, pastoralist livelihoods,
+            household resilience and access to markets.
+          </p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h3>Education & Opportunities</h3>
+          <p>
+            Addressing barriers to education, skills development,
+            participation and opportunities for young people.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section class="section impact" id="impact">
-<div class="container impact-grid">
-<div>
-<div class="eyebrow">Community Engagement</div>
-<h2>Working for Meaningful Community Change</h2>
-<p>BONU seeks to strengthen community initiatives through responsible partnerships, improved organizational systems and locally informed projects.</p>
-<ul class="impact-list">
-<li>Food support and student assistance</li>
-<li>Youth training and empowerment initiatives</li>
-<li>Peaceful coexistence and community dialogue</li>
-<li>Protection, inclusion and dignity</li>
-<li>Water, sanitation and hygiene promotion</li>
-<li>Inclusive and sustainable development</li>
-</ul>
-</div>
-<div class="impact-photo"><img src="https://www.welthungerhilfe.de/fileadmin/_processed_/9/a/csm_2025-wasser-borena-zone-aethiopien_C_Perterhans_992387c685.jpg" alt="Woman collecting water at a water point in Borana, Oromia"></div>
-</div>
+<!-- APPROACH -->
+<section id="approach">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Our Commitment</div>
+      <h2>How we work</h2>
+      <p>
+        We aim to build trust through responsible, inclusive and
+        accountable community engagement.
+      </p>
+    </div>
+
+    <div class="approach">
+      <div class="approach-item">
+        <h3>Participation</h3>
+        <p>Listening to communities and involving them in decisions.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Inclusion</h3>
+        <p>Promoting equal participation and respect for all people.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Accountability</h3>
+        <p>Using resources responsibly and communicating transparently.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Sustainability</h3>
+        <p>Supporting solutions that communities can maintain over time.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section light" id="projects">
-<div class="container">
-<div class="section-heading"><div class="eyebrow">Our Priorities</div><h2>Projects for Stronger Communities</h2><p>We welcome cooperation on practical projects responding to community needs.</p></div>
-<div class="cards">
-<article class="card"><img src="https://www.unicef.org/ethiopia/sites/unicef.org.ethiopia/files/styles/hero_desktop/public/L1200382.webp?itok=6RLF66K1" alt="School children in a classroom"><div class="card-body"><h3>Student Support Initiative</h3><p>Supporting students from vulnerable households through community-based assistance.</p></div></article>
-<article class="card"><img src="https://www.unicef.org/ethiopia/sites/unicef.org.ethiopia/files/styles/hero_desktop/public/L1200382.webp?itok=6RLF66K1" alt="Vocational skills training"><div class="card-body"><h3>Youth Skills Development</h3><p>Promoting practical skills, confidence and opportunities for young people.</p></div></article>
-<article class="card"><img src="https://ethiopia.iom.int/sites/g/files/tmzbdl996/files/styles/max_1300x1300/public/stories/another_beneficiary_from_west_guji_zone_holding_kid_goats_she_bought_using_her_cash_grant_iom_ethiopia.jpeg?itok=fOl7Fstl" alt="Community food support"><div class="card-body"><h3>Community Resilience</h3><p>Developing initiatives that strengthen local participation and household resilience.</p></div></article>
-</div>
-</div>
+<!-- PARTNERS -->
+<section class="light">
+  <div class="container section-head center">
+    <div class="eyebrow">Partnership</div>
+    <h2>Working together for greater impact</h2>
+    <p>
+      BONU welcomes dialogue and collaboration with communities,
+      government institutions, civil society organizations,
+      development partners and humanitarian agencies.
+    </p>
+    <a class="btn" style="margin-top:22px" href="#contact">
+      Explore Partnership
+    </a>
+  </div>
 </section>
 
-<section class="section partner" id="partners">
-<div class="container partner-box">
-<div class="eyebrow">Work With Us</div>
-<h2>Partnership for Sustainable Development</h2>
-<p>BONU welcomes dialogue with humanitarian organizations, NGOs, donors, government institutions and development partners interested in community-centered initiatives across Ethiopia.</p>
-<a href="#contact" class="btn btn-gold">Contact Our Organization</a>
-</div>
+<!-- CONTACT -->
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="eyebrow" style="color:#f0ce7b">Contact BONU</div>
+    <h2>Let us build stronger communities together</h2>
+    <p>
+      For partnership discussions, organizational information
+      and community development collaboration, contact BONU.
+    </p>
+    <a class="btn" href="mailto:abitimama86@gmail.com">
+      Contact Our Organization
+    </a>
+  </div>
 </section>
 
-<section class="section" id="donate">
-<div class="container">
-<div class="section-heading"><div class="eyebrow">Support Our Mission</div><h2>Be Part of Positive Change</h2><p>Your interest and cooperation can help strengthen community development initiatives.</p></div>
-<div class="donation-grid">
-<div class="donation-card"><h3>Become a Supporter</h3><p>Individuals and organizations can contact BONU to discuss possible contributions, project support and cooperation.</p><a href="#contact" class="btn btn-gold">Contact BONU</a></div>
-<div class="donation-card"><h3>Donation Information</h3><p>Contact BONU to request verified organizational donation details and discuss how contributions can support community initiatives.</p><a href="mailto:abitimama86@gmail.com?subject=BONU%20Donation%20Information" class="btn btn-gold">Request Details</a></div>
-</div>
-</div>
-</section>
-
-<section class="section light" id="contact">
-<div class="container contact-grid">
-<div class="contact-info">
-<div class="eyebrow">Get In Touch</div><h2>Contact BONU</h2>
-<p>We welcome inquiries about our work, project proposals, partnerships and community development opportunities.</p>
-<div class="contact-item"><strong>Organization</strong>BONU Humanitarian and Community Development Organization</div>
-<div class="contact-item"><strong>Base</strong>Bule Hora, Oromia, Ethiopia</div>
-<div class="contact-item"><strong>Program Interest</strong>Oromia and other parts of Ethiopia, subject to program capacity and applicable permissions</div>
-<div class="contact-item"><strong>Email</strong><a href="mailto:abitimama86@gmail.com">abitimama86@gmail.com</a></div>
-<div class="contact-item"><strong>Phone / WhatsApp</strong><a href="https://wa.me/251916377098">+251 916 377 098</a></div>
-<div class="socials">
-<a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
-<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-<a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
-</div>
-</div>
-
-<div class="contact-form">
-<h3>Send an Inquiry</h3>
-<form onsubmit="sendMessage(event)">
-<input id="name" type="text" placeholder="Your Name" required>
-<input id="email" type="email" placeholder="Your Email" required>
-<input id="subject" type="text" placeholder="Subject" required>
-<textarea id="message" placeholder="Write your message..." required></textarea>
-<button type="submit">Send Message</button>
-</form>
-</div>
-
-</div>
-</section>
 </main>
 
 <footer>
-<div class="container">
-<div class="footer-grid">
-<div><h3>BONU Organization</h3><p>Humanitarian action and community development through cooperation, dignity, protection, peace and sustainable solutions.</p></div>
-<div><h3>Quick Links</h3><a href="#about">About Us</a><a href="#programs">Our Work</a><a href="#coverage">Where We Work</a><a href="#partners">Partnerships</a></div>
-<div><h3>Get Involved</h3><a href="#donate">Support Our Mission</a><a href="#contact">Contact Us</a><a href="#projects">Our Priorities</a></div>
-</div>
-<div style="font-size:11px;color:#b9cbbf;line-height:1.8;margin:0 0 18px">Photo credits and context: selected illustrative photographs are from published community and development stories in Oromia by Farm Africa, Menschen für Menschen, IOM Ethiopia, UNICEF Ethiopia, the African Development Bank, ENA and Welthungerhilfe. These photographs do not represent BONU project activities unless separately verified and authorized. Please check each source's reuse terms and obtain permission where required before publishing.</div>
-<div class="copyright">© <span id="year"></span> BONU Humanitarian and Community Development Organization. All rights reserved.</div>
-</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>BONU</h3>
+        <p>
+          BONU Humanitarian and Community Development Organization
+          is committed to humanitarian support, community participation
+          and sustainable development in Ethiopia.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#about">About Us</a>
+        <a href="#programs">Our Work</a>
+        <a href="#communities">Communities</a>
+        <a href="#approach">Our Approach</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:abitimama86@gmail.com">Email BONU</a>
+        <a href="tel:+251916377098">+251 916 377 098</a>
+        <p>Ethiopia</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> BONU. All rights reserved.</span>
+      <span>Human dignity • Inclusion • Community development</span>
+    </div>
+  </div>
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("navigation").classList.toggle("active");
+function toggleMenu() {
+  document.getElementById("mainNav").classList.toggle("open");
 }
-function closeMenu(){
-  document.getElementById("navigation").classList.remove("active");
+function closeMenu() {
+  document.getElementById("mainNav").classList.remove("open");
 }
-function sendMessage(event){
-  event.preventDefault();
-  const name=document.getElementById("name").value;
-  const email=document.getElementById("email").value;
-  const subject=document.getElementById("subject").value;
-  const message=document.getElementById("message").value;
-  const body="Name: "+name+"\nEmail: "+email+"\n\n"+message;
-  const url="mailto:abitimama86@gmail.com?subject="+
-  encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
-  window.location.href=url;
-}
-document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
